@@ -8,7 +8,7 @@ class MainPage(BasePage):
     @allure.step('Кликаем ингредиент в Конструкторе')
     def click_ingredient(self):
         self.wait_element_clickability(mp_locators.BUN_RD_D3_INGREDIENT)
-        self.driver.find_element(*mp_locators.BUN_RD_D3_INGREDIENT).click()
+        self.element_click(mp_locators.BUN_RD_D3_INGREDIENT)
 
     @allure.step('Проверяем появление всплывающего окна с деталями ингредиента')
     def check_ingredients_details(self):
@@ -16,7 +16,7 @@ class MainPage(BasePage):
 
     @allure.step('Закрываем всплывающее окно с деталями ингредиента')
     def close_ingredients_details(self):
-        self.driver.find_element(*mp_locators.INGREDIENTS_FORM_CLOSE_BUTTON).click()
+        self.element_click(mp_locators.INGREDIENTS_FORM_CLOSE_BUTTON)
 
     @allure.step('Проверяем закрытие всплывающего окна с деталями ингредиента')
     def check_close_ingredients_details(self):
@@ -25,7 +25,7 @@ class MainPage(BasePage):
     @allure.step('Кликаем кнопку добавления ингредиента в заказ')
     def add_ingredient(self):
         self.wait_element_clickability(mp_locators.INGREDIENT_ADD_BUTTON)
-        self.driver.find_element(*mp_locators.INGREDIENT_ADD_BUTTON).click()
+        self.element_click(mp_locators.INGREDIENT_ADD_BUTTON)
 
     @allure.step('Получаем значение счетчика ингредиента')
     def get_ingredient_counter(self):

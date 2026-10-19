@@ -10,13 +10,13 @@ class TestMainFunctionality:
         main_page = MainPage(driver)
         main_page.click_personal_cabinet_lnk()
         main_page.click_constructor_lnk()
-        assert driver.current_url == d.MAIN_PAGE_LINK
+        assert d.MAIN_PAGE_LINK == main_page.get_current_url()
 
     @allure.title('Тест-кейс: переход по клику на раздел "Лента заказов"')
     def test_feed_access_through_link(self, driver):
         main_page = MainPage(driver)
         main_page.click_feed_lnk()
-        assert driver.current_url == d.FEED_PAGE_PATH
+        assert d.FEED_PAGE_PATH == main_page.get_current_url()
 
     @allure.title('Тест-кейс: если кликнуть на ингредиент, появится всплывающее окно с деталями')
     def test_ingredient_details_appearance(self, driver):

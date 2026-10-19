@@ -8,8 +8,8 @@ class LoginPage(BasePage):
     @allure.step('Логинимся на сайте')
     def login(self, email, password):
         # заполняем поле E-Mail
-        self.driver.find_element(*lp_locators.SIGN_IN_MAIL_FIELD).send_keys(email)
+        self.send_keys_in_field(lp_locators.SIGN_IN_MAIL_FIELD, email)
         # заполняем поле Пароль
-        self.driver.find_element(*lp_locators.SIGN_IN_PSWD_FIELD).send_keys(password)
+        self.send_keys_in_field(lp_locators.SIGN_IN_PSWD_FIELD, password)
         # нажимаем на кнопку Войти
-        self.driver.find_element(*lp_locators.SIGN_IN_BUTTON).click()
+        self.element_click(lp_locators.SIGN_IN_BUTTON)

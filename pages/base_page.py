@@ -52,3 +52,15 @@ class BasePage:
     @allure.step('Обновляем текущую веб-страницу')
     def update_page(self):
         self.driver.refresh()
+
+    @allure.step('Получаем URL текущей веб-страницы')
+    def get_current_url(self):
+        return self.driver.current_url
+
+    @allure.step('Находим элемент по заданному локатору и кликаем по нему')
+    def element_click(self, locator):
+        self.driver.find_element(*locator).click()
+
+    @allure.step('Находим поле по заданному локатору и заполняем его значением {key}')
+    def send_keys_in_field(self, locator, key):
+        self.driver.find_element(*locator).send_keys(key)
