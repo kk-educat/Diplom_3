@@ -10,12 +10,17 @@ from helpers import ClientAPI
 def driver(request):
     if request.param == 'chrome':
         driver = webdriver.Chrome()
-        driver.get(d.MAIN_PAGE_LINK)
     elif request.param == 'firefox':
         driver = webdriver.Firefox()
+    # ожидание ответа от тестируемого сайта не более 10 сек
+    driver.set_page_load_timeout(10)
+    try:
+        # если сайт не ответит за 10 сек, тут будет исключение
         driver.get(d.MAIN_PAGE_LINK)
-    yield driver
-    driver.quit()
+        yield driver
+    finally:
+        # этот блок кода сработает даже в случае возникновения исключения
+        driver.quit()
 
 @pytest.fixture
 def user_data():

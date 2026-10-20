@@ -1,5 +1,5 @@
-# URL-ссылки (используется ссылка на НЕ оригинальный сайт Stellar Burgers)
-MAIN_PAGE_LINK = 'https://gittenhuben.github.io/stellar-burgers'
+# URL-ссылки
+MAIN_PAGE_LINK = 'https://stellarburgers.education-services.ru'
 FEED_PAGE_PATH = MAIN_PAGE_LINK + '/feed'
 
 # ручки для API-запросов (используется API оригинального учебного сайта Stellar Burgers)
