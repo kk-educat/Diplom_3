@@ -2,7 +2,7 @@
 MAIN_PAGE_LINK = 'https://stellarburgers.education-services.ru/'
 FEED_PAGE_PATH = MAIN_PAGE_LINK + 'feed'
 
-# ручки для API-запросов (используется API оригинального учебного сайта Stellar Burgers)
+# ручки для API-запросов
 SERVER_LINK = 'https://stellarburgers.education-services.ru'
 CREATE_ORDER_ENDPOINT = SERVER_LINK + '/api/orders'
 CREATE_USER_ENDPOINT = SERVER_LINK + '/api/auth/register'

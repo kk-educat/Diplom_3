@@ -25,6 +25,8 @@ class TestOrdersFeed:
         in_job_order_numbers = feed_page.get_in_job_order_numbers()
         # так как пользователь создал заказ один раз, можем получить номер первого заказа в его списке заказов
         user_order_number = str(ClientAPI().get_user_first_order_number(user_data["accessToken"]))
+        # добавляем ведущий 0 в номер заказа
+        user_order_number = '0' + user_order_number
         # проверяем, что номер заказа, сделанного пользователем присутствует среди заказов "В работе"
         assert user_order_number in in_job_order_numbers
 

@@ -22,14 +22,13 @@ class MainPage(BasePage):
     def check_close_ingredients_details(self):
         return self.check_element_not_visible(mp_locators.INGREDIENTS_FORM_HEADER)
 
-    @allure.step('Кликаем кнопку добавления ингредиента в заказ')
+    @allure.step('Перетаскиваем ингредиент в корзину')
     def add_ingredient(self):
-        self.wait_element_clickability(mp_locators.INGREDIENT_ADD_BUTTON)
-        self.element_click(mp_locators.INGREDIENT_ADD_BUTTON)
+        self.drag_and_drop(mp_locators.BUN_RD_D3_INGREDIENT, mp_locators.CONSTRUCTOR_BASKET_TOP_BUN_POSITION)
 
     @allure.step('Получаем значение счетчика ингредиента')
     def get_ingredient_counter(self):
-        return self.get_element_text(mp_locators.INGREDIENT_COUNTER)
+        return self.get_element_text(mp_locators.BUN_RD_D3_INGREDIENT_COUNTER)
 
     @allure.step('Ожидаем появление элементов главной страницы')
     def wait_load_main_page(self):

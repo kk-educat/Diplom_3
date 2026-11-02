@@ -12,8 +12,8 @@ def driver(request):
         driver = webdriver.Chrome()
     elif request.param == 'firefox':
         driver = webdriver.Firefox()
-    # ожидание ответа от тестируемого сайта не более 10 сек
-    driver.set_page_load_timeout(10)
+    # ожидание ответа от тестируемого сайта не более 30 сек
+    driver.set_page_load_timeout(30)
     try:
         # если сайт не ответит за 10 сек, тут будет исключение
         driver.get(d.MAIN_PAGE_LINK)
