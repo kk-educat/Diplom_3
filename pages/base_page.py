@@ -1,7 +1,6 @@
 import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
-# from selenium.webdriver import ActionChains
 
 import locators.base_page_locators as bp_locators
 
